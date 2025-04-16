@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
-  '@nuxt/content':
-    hash: f8d5e1699cff114c8b0611f41f404a5e1c00a13d19fd9899b08b1b718180e7a2
-    path: patches/@nuxt__content.patch
+  db0:
+    hash: 025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3
+    path: patches/db0.patch
 
 importers:
 
@@ -15,10 +15,10 @@ importers:
     dependencies:
       '@nuxt/content':
         specifier: https://pkg.pr.new/@nuxt/content@59cb326
-        version: https://pkg.pr.new/@nuxt/content@59cb326(patch_hash=f8d5e1699cff114c8b0611f41f404a5e1c00a13d19fd9899b08b1b718180e7a2)(magicast@0.3.5)(sqlite3@5.1.7)(typescript@5.7.3)
+        version: https://pkg.pr.new/@nuxt/content@59cb326(magicast@0.3.5)(sqlite3@5.1.7)(typescript@5.7.3)
       nuxt:
         specifier: ^3.16.2
-        version: 3.16.2(@parcel/watcher@2.5.1)(@types/node@22.13.1)(better-sqlite3@11.9.1)(db0@0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7))(encoding@0.1.13)(ioredis@5.6.0)(magicast@0.3.5)(rollup@4.36.0)(sqlite3@5.1.7)(terser@5.38.2)(typescript@5.7.3)(vite@6.2.6(@types/node@22.13.1)(jiti@2.4.2)(terser@5.38.2)(yaml@2.7.0))(yaml@2.7.0)
+        version: 3.16.2(@parcel/watcher@2.5.1)(@types/node@22.13.1)(better-sqlite3@11.9.1)(db0@0.3.1(patch_hash=025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3)(better-sqlite3@11.9.1)(sqlite3@5.1.7))(encoding@0.1.13)(ioredis@5.6.0)(magicast@0.3.5)(rollup@4.36.0)(sqlite3@5.1.7)(terser@5.38.2)(typescript@5.7.3)(vite@6.2.6(@types/node@22.13.1)(jiti@2.4.2)(terser@5.38.2)(yaml@2.7.0))(yaml@2.7.0)
       sqlite3:
         specifier: ^5.1.7
         version: 5.1.7
@@ -4205,7 +4205,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@nuxt/content@https://pkg.pr.new/@nuxt/content@59cb326(patch_hash=f8d5e1699cff114c8b0611f41f404a5e1c00a13d19fd9899b08b1b718180e7a2)(magicast@0.3.5)(sqlite3@5.1.7)(typescript@5.7.3)':
+  '@nuxt/content@https://pkg.pr.new/@nuxt/content@59cb326(magicast@0.3.5)(sqlite3@5.1.7)(typescript@5.7.3)':
     dependencies:
       '@nuxt/kit': 3.16.2(magicast@0.3.5)
       '@nuxtjs/mdc': https://pkg.pr.new/@nuxtjs/mdc@cd1c4fd(magicast@0.3.5)
@@ -4216,7 +4216,7 @@ snapshots:
       c12: 3.0.3(magicast@0.3.5)
       chokidar: 4.0.3
       consola: 3.4.2
-      db0: 0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7)
+      db0: 0.3.1(patch_hash=025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3)(better-sqlite3@11.9.1)(sqlite3@5.1.7)
       defu: 6.1.4
       destr: 2.0.5
       fast-glob: 3.3.3
@@ -5461,7 +5461,7 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  db0@0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7):
+  db0@0.3.1(patch_hash=025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3)(better-sqlite3@11.9.1)(sqlite3@5.1.7):
     optionalDependencies:
       better-sqlite3: 11.9.1
       sqlite3: 5.1.7
@@ -6773,7 +6773,7 @@ snapshots:
       cookie-es: 2.0.0
       croner: 9.0.0
       crossws: 0.3.4
-      db0: 0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7)
+      db0: 0.3.1(patch_hash=025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3)(better-sqlite3@11.9.1)(sqlite3@5.1.7)
       defu: 6.1.4
       destr: 2.0.3
       dot-prop: 9.0.0
@@ -6819,7 +6819,7 @@ snapshots:
       unenv: 2.0.0-rc.15
       unimport: 4.2.0
       unplugin-utils: 0.2.4
-      unstorage: 1.15.0(db0@0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7))(ioredis@5.6.0)
+      unstorage: 1.15.0(db0@0.3.1(patch_hash=025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3)(better-sqlite3@11.9.1)(sqlite3@5.1.7))(ioredis@5.6.0)
       untyped: 2.0.0
       unwasm: 0.3.9
       youch: 4.1.0-beta.6
@@ -6943,7 +6943,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  nuxt@3.16.2(@parcel/watcher@2.5.1)(@types/node@22.13.1)(better-sqlite3@11.9.1)(db0@0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7))(encoding@0.1.13)(ioredis@5.6.0)(magicast@0.3.5)(rollup@4.36.0)(sqlite3@5.1.7)(terser@5.38.2)(typescript@5.7.3)(vite@6.2.6(@types/node@22.13.1)(jiti@2.4.2)(terser@5.38.2)(yaml@2.7.0))(yaml@2.7.0):
+  nuxt@3.16.2(@parcel/watcher@2.5.1)(@types/node@22.13.1)(better-sqlite3@11.9.1)(db0@0.3.1(patch_hash=025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3)(better-sqlite3@11.9.1)(sqlite3@5.1.7))(encoding@0.1.13)(ioredis@5.6.0)(magicast@0.3.5)(rollup@4.36.0)(sqlite3@5.1.7)(terser@5.38.2)(typescript@5.7.3)(vite@6.2.6(@types/node@22.13.1)(jiti@2.4.2)(terser@5.38.2)(yaml@2.7.0))(yaml@2.7.0):
     dependencies:
       '@nuxt/cli': 3.24.1(magicast@0.3.5)
       '@nuxt/devalue': 2.0.2
@@ -7002,7 +7002,7 @@ snapshots:
       unimport: 4.2.0
       unplugin: 2.3.0
       unplugin-vue-router: 0.12.0(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
-      unstorage: 1.15.0(db0@0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7))(ioredis@5.6.0)
+      unstorage: 1.15.0(db0@0.3.1(patch_hash=025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3)(better-sqlite3@11.9.1)(sqlite3@5.1.7))(ioredis@5.6.0)
       untyped: 2.0.0
       vue: 3.5.13(typescript@5.7.3)
       vue-bundle-renderer: 2.1.1
@@ -8165,7 +8165,7 @@ snapshots:
       picomatch: 4.0.2
       webpack-virtual-modules: 0.6.2
 
-  unstorage@1.15.0(db0@0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7))(ioredis@5.6.0):
+  unstorage@1.15.0(db0@0.3.1(patch_hash=025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3)(better-sqlite3@11.9.1)(sqlite3@5.1.7))(ioredis@5.6.0):
     dependencies:
       anymatch: 3.1.3
       chokidar: 4.0.3
@@ -8176,7 +8176,7 @@ snapshots:
       ofetch: 1.4.1
       ufo: 1.5.4
     optionalDependencies:
-      db0: 0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7)
+      db0: 0.3.1(patch_hash=025c4b4bda82308c3f70d45ed2ad02e9237323130ae898f4ac7ac08dc51dbbd3)(better-sqlite3@11.9.1)(sqlite3@5.1.7)
       ioredis: 5.6.0
 
   untun@0.1.3:

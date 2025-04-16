@@ -1,0 +1,76 @@
+diff --git a/dist/connectors/sqlite3.mjs b/dist/connectors/sqlite3.mjs
+index 659437fd6e58658c6823163c8223a11b95b377e1..c790c51229c5e0222fbefb3341c3077f22973968 100644
+--- a/dist/connectors/sqlite3.mjs
++++ b/dist/connectors/sqlite3.mjs
+@@ -8,8 +8,9 @@ export default function nodeSqlite3Connector(opts) {
+     if (_db) {
+       return _db;
+     }
++    const s3 = sqlite3.verbose();
+     if (opts.name === ":memory:") {
+-      _db = new sqlite3.Database(":memory:");
++      _db = new s3.Database(":memory:");
+       return _db;
+     }
+     const filePath = resolve(
+@@ -17,7 +18,7 @@ export default function nodeSqlite3Connector(opts) {
+       opts.path || `.data/${opts.name || "db"}.sqlite3`
+     );
+     mkdirSync(dirname(filePath), { recursive: true });
+-    _db = new sqlite3.Database(filePath);
++    _db = new s3.Database(filePath);
+     return _db;
+   };
+   const query = (sql) => new Promise((resolve2, reject) => {
+@@ -33,25 +34,47 @@ export default function nodeSqlite3Connector(opts) {
+     dialect: "sqlite",
+     getInstance: () => getDB(),
+     exec: (sql) => query(sql),
+-    prepare: (sql) => new StatementWrapper(getDB().prepare(sql))
++    prepare: (sql) => {
++      const stm = new StatementWrapper()
++      stm._statement = getDB().prepare(sql, stm._prepareCallback.bind(stm))
++      return stm
++    }
+   };
+ }
+ class StatementWrapper extends BoundableStatement {
++  _callback;
++  _prepareCallback(err, res) {
++    console.log("prepareCallback", err, res);
++    if (this._callback && err) {
++      return this._callback(err, res);
++    }
++
++    if (err) {
++      throw err;
++    }
++    return res;
++  }
++  constructor() {
++    super(undefined);
++  }
+   async all(...params) {
+     const rows = await new Promise((resolve2, reject) => {
+-      this._statement.all(...params, (err, rows2) => err ? reject(err) : resolve2(rows2));
++        this._callback = (err, rows2) => err ? reject(err) : resolve2(rows2);
++        this._statement.all(...params, this._callback);
+     });
+     return rows;
+   }
+   async run(...params) {
+     await new Promise((resolve2, reject) => {
+-      this._statement.run(...params, (err) => err ? reject(err) : resolve2());
++        this._callback = (err) => err ? reject(err) : resolve2();
++        this._statement.run(...params, (err) => err ? reject(err) : resolve2());
+     });
+     return { success: true };
+   }
+   async get(...params) {
+     const row = await new Promise((resolve2, reject) => {
+-      this._statement.get(...params, (err, row2) => err ? reject(err) : resolve2(row2));
++        this._callback = (err, row2) => err ? reject(err) : resolve2(row2);
++        this._statement.get(...params, this._callback);
+     });
+     return row;
+   }

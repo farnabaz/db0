@@ -4,4 +4,4 @@ onlyBuiltDependencies:
   - sqlite3
 
 patchedDependencies:
-  '@nuxt/content': patches/@nuxt__content.patch
+  db0: patches/db0.patch
