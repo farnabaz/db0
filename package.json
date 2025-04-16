@@ -10,7 +10,7 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@nuxt/content": "https://pkg.pr.new/@nuxt/content@f0eb122",
+    "@nuxt/content": "https://pkg.pr.new/@nuxt/content@59cb326",
     "nuxt": "^3.16.2",
     "sqlite3": "^5.1.7"
   }
