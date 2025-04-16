@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@nuxt/content':
-    hash: 52d92c1e50dbec9e62a5fc4fcb8e69bf79e9b0d088a0609e667cf34b38517a9d
+    hash: f8d5e1699cff114c8b0611f41f404a5e1c00a13d19fd9899b08b1b718180e7a2
     path: patches/@nuxt__content.patch
 
 importers:
@@ -15,7 +15,7 @@ importers:
     dependencies:
       '@nuxt/content':
         specifier: https://pkg.pr.new/@nuxt/content@f0eb122
-        version: https://pkg.pr.new/@nuxt/content@f0eb122(patch_hash=52d92c1e50dbec9e62a5fc4fcb8e69bf79e9b0d088a0609e667cf34b38517a9d)(magicast@0.3.5)(sqlite3@5.1.7)(typescript@5.7.3)
+        version: https://pkg.pr.new/@nuxt/content@f0eb122(patch_hash=f8d5e1699cff114c8b0611f41f404a5e1c00a13d19fd9899b08b1b718180e7a2)(magicast@0.3.5)(sqlite3@5.1.7)(typescript@5.7.3)
       nuxt:
         specifier: ^3.16.2
         version: 3.16.2(@parcel/watcher@2.5.1)(@types/node@22.13.1)(better-sqlite3@11.9.1)(db0@0.3.1(better-sqlite3@11.9.1)(sqlite3@5.1.7))(encoding@0.1.13)(ioredis@5.6.0)(magicast@0.3.5)(rollup@4.36.0)(sqlite3@5.1.7)(terser@5.38.2)(typescript@5.7.3)(vite@6.2.6(@types/node@22.13.1)(jiti@2.4.2)(terser@5.38.2)(yaml@2.7.0))(yaml@2.7.0)
@@ -4205,7 +4205,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@nuxt/content@https://pkg.pr.new/@nuxt/content@f0eb122(patch_hash=52d92c1e50dbec9e62a5fc4fcb8e69bf79e9b0d088a0609e667cf34b38517a9d)(magicast@0.3.5)(sqlite3@5.1.7)(typescript@5.7.3)':
+  '@nuxt/content@https://pkg.pr.new/@nuxt/content@f0eb122(patch_hash=f8d5e1699cff114c8b0611f41f404a5e1c00a13d19fd9899b08b1b718180e7a2)(magicast@0.3.5)(sqlite3@5.1.7)(typescript@5.7.3)':
     dependencies:
       '@nuxt/kit': 3.16.2(magicast@0.3.5)
       '@nuxtjs/mdc': https://pkg.pr.new/@nuxtjs/mdc@cd1c4fd(magicast@0.3.5)
