@@ -1,0 +1,12 @@
+diff --git a/dist/module.mjs b/dist/module.mjs
+index 35fda6b0359b88fa90a117a61895bc09fcf7329c..f5d3f280f487dd940d71e4f224eebd8099bc13e7 100644
+--- a/dist/module.mjs
++++ b/dist/module.mjs
+@@ -272,6 +272,7 @@ async function getLocalDatabase(database, { connector, nativeSqlite } = {}) {
+   };
+ }
+ function findBestSqliteAdapter(opts) {
++  return "db0/connectors/sqlite3"
+   if (process.versions.bun) {
+     return "db0/connectors/bun-sqlite";
+   }
