@@ -11,6 +11,12 @@ export default defineNuxtConfig({
       dependencies: packageJson.dependencies,
     }
   },
+  content: {
+    database: {
+      type: 'sqlite',
+      filename: '/tmp/content.db',
+    }
+  },
   devtools: { enabled: true },
   future: {
     compatibilityVersion: 4,
